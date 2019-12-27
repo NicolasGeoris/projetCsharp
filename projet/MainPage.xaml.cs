@@ -26,5 +26,25 @@ namespace projet
         {
             this.InitializeComponent();
         }
+
+        public async void Commencer_jeu(object sender, RoutedEventArgs e)
+        {
+            if (saisie_nom.Text != "")
+            {
+                Application.Current.Resources["nom_joueur"] = saisie_nom.Text;
+                Frame.Navigate(typeof(Page_1));
+            }
+            else
+            {
+                ContentDialog dialog = new ContentDialog
+                {
+                    Title = "YA PA DE PANO",
+                    Content = "Entre ton nom!",
+                    CloseButtonText = "OK"
+                };
+
+                ContentDialogResult result = await dialog.ShowAsync();
+            }
+        }
     }
 }

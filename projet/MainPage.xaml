@@ -9,6 +9,16 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
 
+        <TextBlock x:Name="titre_du_jeu" Text="LE TITRE DU JEU ICI" FontSize="100" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>
+        <TextBlock x:Name="label_nom" Text="Entre ton nom pour commencer" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1"/>
+        <TextBox x:Name="saisie_nom" Width="500" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2"/>
+        <Button x:Name="bouton_commencer" Content="Commencer!" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="3" Click="Commencer_jeu"/>
     </Grid>
 </Page>

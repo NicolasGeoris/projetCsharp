@@ -25,13 +25,16 @@ namespace projet
         public MainPage()
         {
             this.InitializeComponent();
+            Inventaire inventaire_init = new Inventaire();
+            inventaire_init.Charger();
+            Application.Current.Resources["inventaire"] = inventaire_init;
         }
 
         public async void Commencer_jeu(object sender, RoutedEventArgs e)
         {
             if (saisie_nom.Text != "")
             {
-                Application.Current.Resources["nom_joueur"] = saisie_nom.Text;
+                Application.Current.Resources["nom joueur"] = saisie_nom.Text;
                 Frame.Navigate(typeof(Page_1));
             }
             else

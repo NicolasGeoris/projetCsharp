@@ -22,9 +22,11 @@ namespace projet
     /// </summary>
     public sealed partial class Page_1 : Page
     {
+
         public Page_1()
         {
             this.InitializeComponent();
+            inventaire.ItemsSource = Application.Current.Resources["inventaire"];
         }
     }
 }

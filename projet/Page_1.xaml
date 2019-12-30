@@ -20,6 +20,9 @@
 
         <Image x:Name="enigme" Source="enigme1.png" Width="500" Height="500" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
         <TextBox x:Name="reponse" InputScope="Number" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="100" Margin="10"/>
+        <Button x:Name="valider" Content="Appuyer" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" Width="80" Margin="120 10" Click="VerifReponse"/>
+        <Image x:Name="fleche_choix1" Grid.Row="0" Grid.Column="1"/>
+
         <TextBlock Text="Il y a un panneau avec des chiffres, sur quel chiffre appuyer ?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Grid.Row="1" Grid.Column="0"/>
         <ListBox x:Name="inventaire" Grid.Row="1" Grid.Column="1" DisplayMemberPath="Nom"/>
     </Grid>

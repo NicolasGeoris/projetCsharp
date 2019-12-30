@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=234238
@@ -27,6 +28,17 @@ namespace projet
         {
             this.InitializeComponent();
             inventaire.ItemsSource = Application.Current.Resources["inventaire"];
+        }
+
+        public void VerifReponse(object sender, RoutedEventArgs e)
+        {
+            if (reponse.Text == "4")
+            {
+                BitmapImage btmpImg = new BitmapImage(new Uri(this.BaseUri, @"Assets\fleche.png"));
+                fleche_choix1.Source = btmpImg;
+                fleche_choix1.Height = 100;
+                fleche_choix1.Width = 100;
+            }
         }
     }
 }

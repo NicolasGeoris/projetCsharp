@@ -15,7 +15,7 @@ namespace projet
         public async void Charger()
         {
             //Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            Windows.Storage.StorageFolder storageFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
             Windows.Storage.StorageFile sampleFile = await storageFolder.GetFileAsync("inventaire.json");
             //Windows.Storage.StorageFile sampleFile = await storageFolder.CreateFileAsync("inventaire.json", Windows.Storage.CreationCollisionOption.ReplaceExisting);
             //await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "[{ \"Nom\": \"torche\"},{ \"Nom\": \"livre\"},{\"Nom\": \"manteau\"}]");

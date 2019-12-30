@@ -54,7 +54,7 @@ namespace projet
         public async void JouerSon()
         {
             var element = new MediaElement();
-            var folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            var folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
             Console.WriteLine(folder.Path);
             var file = await folder.GetFileAsync("musique.mp3");
             var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);

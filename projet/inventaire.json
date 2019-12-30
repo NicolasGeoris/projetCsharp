@@ -1,5 +1,3 @@
-{
-    "inventaire" : [{"nom": "torche"},
-    {"nom": "livre"},
-    {"nom": "manteau"}]
-}
+[{"Nom": "torche"},
+    {"Nom": "livre"},
+    {"Nom": "manteau"}]

@@ -25,6 +25,7 @@ namespace projet
         public MainPage()
         {
             this.InitializeComponent();
+            JouerSon();
             Inventaire inventaire_init = new Inventaire();
             inventaire_init.Charger();
             Application.Current.Resources["inventaire"] = inventaire_init;
@@ -48,6 +49,17 @@ namespace projet
 
                 ContentDialogResult result = await dialog.ShowAsync();
             }
+        }
+
+        public async void JouerSon()
+        {
+            var element = new MediaElement();
+            var folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            Console.WriteLine(folder.Path);
+            var file = await folder.GetFileAsync("musique.mp3");
+            var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+            element.SetSource(stream, "");
+            element.Play();
         }
     }
 }

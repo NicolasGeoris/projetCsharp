@@ -11,9 +11,9 @@ namespace projet
         private string nom;
         public string Nom { get => nom; set => nom = value; }
 
-        public Objet(string nom)
-        {
-            this.nom = nom;
-        }
+        //public Objet(string nom)
+        //{
+        //    this.nom = nom;
+        //}
     }
 }

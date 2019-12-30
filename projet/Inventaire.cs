@@ -6,16 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Json;
 using System.IO;
+using System.Text.Json;
 
 namespace projet
 {
     class Inventaire : ObservableCollection<Objet>
     {
-        public void Charger()
+        public async void Charger()
         {
-            FileStream stream = File.Open(@"..\..\..\..\inventaire.json", FileMode.Open);
-            DataContractJsonSerializer serial = new DataContractJsonSerializer(typeof(Inventaire));
-            Inventaire tmp = (Inventaire)serial.ReadObject(stream);
+            //Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            Windows.Storage.StorageFile sampleFile = await storageFolder.GetFileAsync("inventaire.json");
+            //Windows.Storage.StorageFile sampleFile = await storageFolder.CreateFileAsync("inventaire.json", Windows.Storage.CreationCollisionOption.ReplaceExisting);
+            //await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "[{ \"Nom\": \"torche\"},{ \"Nom\": \"livre\"},{\"Nom\": \"manteau\"}]");
+            string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
+            Inventaire tmp = JsonSerializer.Deserialize<Inventaire>(text);
+            //Inventaire tmp = new Inventaire();
             this.Clear();
             foreach (Objet objet in tmp)
             {

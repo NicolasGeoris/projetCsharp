@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="projet.Page_1"
+    x:Class="projet.Page_2"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:projet"
@@ -18,24 +18,15 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="enigme" Source="enigme1.png" Width="500" Height="500" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Image x:Name="enigme" Source="enigme2.png" Width="500" Height="500" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
         <StackPanel x:Name="boutons_choix" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Button Width="50" Height="50" Margin="5" Click="MauvaisBouton">
-                <Image Source="7.png" Width="30"/>
-            </Button>
-            <Button Width="50" Height="50" Margin="5" Click="BonBouton">
-                <Image Source="4.png" Width="30"/>
-            </Button>
-            <Button Width="50" Height="50" Margin="5" Click="MauvaisBouton">
-                <Image Source="N.png" Width="50"/>
-            </Button>
-            <Button Width="50" Height="50" Margin="5" Click="MauvaisBouton">
-                <Image Source="9.png" Width="29"/>
-            </Button>
+            <TextBox Width="100" Height="50" x:Name="reponse" Margin="5"/>
+            <Button Content="Donner le code" Height="50" Margin="5" Click="VerifReponse"/>
         </StackPanel>
-        
-        
-        <Button x:Name="test" Grid.Row="0" Grid.Column="1" Visibility="Collapsed" Click="Continuer">
+
+
+        <Button x:Name="continuer" Grid.Row="0" Grid.Column="1" Visibility="Collapsed" Click="Continuer">
             <StackPanel Orientation="Horizontal">
                 <Image x:Name="fleche_choix1" Width="30" Height="30" Source="fleche.png"/>
                 <TextBlock Text="Vers la salle suivante"/>
@@ -43,7 +34,7 @@
         </Button>
 
 
-        <TextBlock x:Name="description" Text="Il y a des boutons avec des symboles étranges, sur lequel appuyer ?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Grid.Row="1" Grid.Column="0" TextAlignment="Center" TextWrapping="WrapWholeWords"/>
+        <TextBlock x:Name="description" Text="La porte semble demander un code. Je me demande si ca a un lien avec ce dessin ?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Grid.Row="1" Grid.Column="0" TextAlignment="Center" TextWrapping="WrapWholeWords"/>
         <ListBox x:Name="inventaire" Grid.Row="1" Grid.Column="1" DisplayMemberPath="Nom" SelectionChanged="AfficheInfos"/>
     </Grid>
 </Page>

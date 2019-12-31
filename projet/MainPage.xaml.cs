@@ -36,7 +36,7 @@ namespace projet
             if (saisie_nom.Text != "")
             {
                 Application.Current.Resources["nom joueur"] = saisie_nom.Text;
-                Frame.Navigate(typeof(Page_1));
+                Frame.Navigate(typeof(Page_intro));
             }
             else
             {

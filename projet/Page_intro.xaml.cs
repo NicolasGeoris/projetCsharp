@@ -11,7 +11,6 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=234238
@@ -21,26 +20,12 @@ namespace projet
     /// <summary>
     /// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
     /// </summary>
-    public sealed partial class Page_1 : Page
+    public sealed partial class Page_intro : Page
     {
-
-        public Page_1()
+        public Page_intro()
         {
             this.InitializeComponent();
             inventaire.ItemsSource = Application.Current.Resources["inventaire"];
-        }
-
-        public void BonBouton(object sender, RoutedEventArgs e)
-        {
-            boutons_choix.Visibility = Visibility.Collapsed;
-            test.Visibility = Visibility.Visible;
-            description.Text = "Oh! La porte s'ouvre !";
-            //Ici on met une belle animation de porte tavu
-        }
-
-        public void MauvaisBouton(object sender, RoutedEventArgs e)
-        {
-            description.Text = "Visiblement ca n'était pas ce bouton là. J'espère que rien ne va se passer!";
         }
 
         public async void AfficheInfos(object sender, RoutedEventArgs e)
@@ -58,7 +43,7 @@ namespace projet
 
         public void Continuer(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Page_2));
+            Frame.Navigate(typeof(Page_1));
         }
     }
 }

@@ -33,15 +33,22 @@
                 <Image Source="9.png" Width="29"/>
             </Button>
         </StackPanel>
-        
-        
-        <Button x:Name="test" Grid.Row="0" Grid.Column="1" Visibility="Collapsed" Click="Continuer">
-            <StackPanel Orientation="Horizontal">
-                <Image x:Name="fleche_choix1" Width="30" Height="30" Source="fleche.png"/>
-                <TextBlock Text="Vers la salle suivante"/>
-            </StackPanel>
-        </Button>
 
+        <StackPanel x:Name="boutons_deplacement" Visibility="Collapsed" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">
+            <Button x:Name="choix1" Grid.Row="0" Grid.Column="1" Click="Continuer" Margin="5">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="30" Height="30" Source="fleche.png"/>
+                    <TextBlock Text="Vers la salle suivante"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="choix2" Grid.Row="0" Grid.Column="1" Click="ContinuerPerdu" Margin="5">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="30" Height="30" Source="fleche.png"/>
+                    <TextBlock Text="Vers la salle suivante"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
 
         <TextBlock x:Name="description" Text="Il y a des boutons avec des symboles étranges, sur lequel appuyer ?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Grid.Row="1" Grid.Column="0" TextAlignment="Center" TextWrapping="WrapWholeWords"/>
         <ListBox x:Name="inventaire" Grid.Row="1" Grid.Column="1" DisplayMemberPath="Nom" SelectionChanged="AfficheInfos"/>

@@ -127,6 +127,9 @@
     <Compile Include="Page_2.xaml.cs">
       <DependentUpon>Page_2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page_3.xaml.cs">
+      <DependentUpon>Page_3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page_base.xaml.cs">
       <DependentUpon>Page_base.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,12 @@
     </Compile>
     <Compile Include="Page_intro.xaml.cs">
       <DependentUpon>Page_intro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page_Perdu.xaml.cs">
+      <DependentUpon>Page_Perdu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page_Victoire.xaml.cs">
+      <DependentUpon>Page_Victoire.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -160,6 +169,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="enigme2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="feuille.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="fleche.png">
@@ -193,6 +205,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Page_3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Page_base.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -202,6 +218,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Page_intro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page_Perdu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page_Victoire.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -28,5 +28,15 @@ namespace projet
                 this.Add(objet);
             }
         }
+
+        public void AddObjet(string nom, string description)
+        {
+            Objet nouvelObj = new Objet()
+            {
+                Nom = nom,
+                Description = description
+            };
+            Add(nouvelObj);
+        }
     }
 }

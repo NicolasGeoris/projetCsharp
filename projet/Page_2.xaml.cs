@@ -30,7 +30,12 @@ namespace projet
 
         public void Continuer(object sender, RoutedEventArgs e)
         {
+            Frame.Navigate(typeof(Page_3));
+        }
 
+        public void ContinuerPerdu(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Page_Perdu));
         }
 
         public async void AfficheInfos(object sender, RoutedEventArgs e)
@@ -52,7 +57,7 @@ namespace projet
             if (reponse.Text == "40")
             {
                 description.Text = "C'était ca ! La porte s'ouvre !";
-                continuer.Visibility = Visibility.Visible;
+                boutons_deplacement.Visibility = Visibility.Visible;
                 //Une belle animation de porte qui s'ouvre
             }
         }

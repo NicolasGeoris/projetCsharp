@@ -11,7 +11,6 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=234238
@@ -21,26 +20,12 @@ namespace projet
     /// <summary>
     /// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
     /// </summary>
-    public sealed partial class Page_1 : Page
+    public sealed partial class Page_3 : Page
     {
-
-        public Page_1()
+        public Page_3()
         {
             this.InitializeComponent();
             inventaire.ItemsSource = Application.Current.Resources["inventaire"];
-        }
-
-        public void BonBouton(object sender, RoutedEventArgs e)
-        {
-            boutons_choix.Visibility = Visibility.Collapsed;
-            boutons_deplacement.Visibility = Visibility.Visible;
-            description.Text = "Oh! La porte s'ouvre !";
-            //Ici on met une belle animation de porte tavu
-        }
-
-        public void MauvaisBouton(object sender, RoutedEventArgs e)
-        {
-            description.Text = "Visiblement ca n'était pas ce bouton là. J'espère que rien ne va se passer!";
         }
 
         public async void AfficheInfos(object sender, RoutedEventArgs e)
@@ -54,11 +39,37 @@ namespace projet
             };
 
             ContentDialogResult result = await dialog.ShowAsync();
+            if (selectionne.Nom == "Note étrange")
+            {
+                stack_reponse.Visibility = Visibility.Visible;
+            }
+
+        }
+
+        public void recupererFeuille(object sender, RoutedEventArgs e)
+        {
+            feuille.Visibility = Visibility.Collapsed;
+            string nomJoueur = (string)Application.Current.Resources["nom joueur"];
+            ((Inventaire)Application.Current.Resources["inventaire"]).AddObjet("Note étrange", nomJoueur + ", \n Si tu résouds cette dernière énigme, tu pourras sortir :\n \"Quand on prononce mon nom, je suis brisé\"\n Bonne chance !");
+            description.Text = "Je devrais certainement lire cette note";
+        }
+
+        public void VerifReponse(object sender, RoutedEventArgs e)
+        {
+            if (reponse.Text == "silence" || reponse.Text == "le silence")
+            {
+                boutons_deplacement.Visibility = Visibility.Visible;
+                description.Text = "J'ai eu juste ! La porte s'ouvre !";
+            }
+            else
+            {
+                description.Text = "Rien ne se passe, ce n'était peut-être pas la réponse attendue...";
+            }
         }
 
         public void Continuer(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Page_2));
+            Frame.Navigate(typeof(Page_Victoire));
         }
 
         public void ContinuerPerdu(object sender, RoutedEventArgs e)

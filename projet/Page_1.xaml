@@ -18,7 +18,19 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="enigme" Source="enigme1.png" Width="500" Height="500" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Rectangle x:Name="fond" Fill="Black" Width="150" Height="300" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="325 100"/>
+        <Rectangle x:Name="porteGauche" Width="200" Height="300" Grid.Row="0" HorizontalAlignment="Left" Margin="200 100" Stroke="Black">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="porte gauche.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="porteDroite" Width="200" Height="300" Grid.Row="0" HorizontalAlignment="Left" Margin="400 100" Stroke="Black">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="porte droite.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        <Image x:Name="enigme" Source="enigme1.png" Width="500" Height="300" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="200 100"/>
         <StackPanel x:Name="boutons_choix" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <Button Width="50" Height="50" Margin="5" Click="MauvaisBouton">
                 <Image Source="7.png" Width="30"/>
@@ -38,14 +50,14 @@
             <Button x:Name="choix1" Grid.Row="0" Grid.Column="1" Click="Continuer" Margin="5">
                 <StackPanel Orientation="Horizontal">
                     <Image Width="30" Height="30" Source="fleche.png"/>
-                    <TextBlock Text="Vers la salle suivante"/>
+                    <TextBlock Text="Prendre à gauche"/>
                 </StackPanel>
             </Button>
 
             <Button x:Name="choix2" Grid.Row="0" Grid.Column="1" Click="ContinuerPerdu" Margin="5">
                 <StackPanel Orientation="Horizontal">
                     <Image Width="30" Height="30" Source="fleche.png"/>
-                    <TextBlock Text="Vers la salle suivante"/>
+                    <TextBlock Text="Prendre à droite"/>
                 </StackPanel>
             </Button>
         </StackPanel>
